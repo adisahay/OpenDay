@@ -1,5 +1,6 @@
 # OpenDay
 Move your school to the cloud
-* Manage admissions for new students
-* Manage onboarding of new teachers
+* Manage admission of students
+* Manage onboarding of teachers
+* Create classrooms and assign class teachers
 * Enable teachers to mark attendance or notify parents
