@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8" />
+        <title>Teachers | Overview</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" />
+        <meta content="" name="author" />
+        <link rel="manifest" href="/teacher/manifest.json">
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link rel="manifest" href="/manifest.json">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+        <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="../assets/global/plugins/bootstrap-multiselect/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="../assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="../assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="../assets/layouts/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/layouts/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="../assets/layouts/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/custom/css/teachers/overview.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%=gatc%>"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '<%= gatc %>');
+        </script>
+    </head>
+    <!-- END HEAD -->
+    <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md" ng-app="teachersApp" ng-controller="teachersController">
+        <!-- BEGIN HEADER -->
+        <% include ./partialView/header.ejs %>
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <% include ./partialView/sidebar.ejs %>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row" style="padding: 0 10px">
+                        <a class="col-xs-6 col-sm-3 customPadding" href="/teachers/attendance?classroom={{currentClassroom._id}}">
+                            <div class="actionBox">
+                                <div align="middle">
+                                    <div class="actionIcon" id="attendanceIcon"></div>
+                                    <div class="actionLabel unselectable">
+                                        Attendance
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="col-xs-6 col-sm-3 customPadding" style="display: none">
+                            <div class="actionBox">
+                                <div align="middle">
+                                    <div class="actionIcon" id="timetableIcon"></div>
+                                    <div class="actionLabel unselectable">
+                                        Time-Table
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 customPadding" style="display: none">
+                            <div class="actionBox">
+                                <div align="middle">
+                                    <div class="actionIcon" id="eventIcon"></div>
+                                    <div class="actionLabel unselectable">
+                                        Add Event
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="col-xs-6 col-sm-3 customPadding" href="/teachers/broadcast?classroom={{currentClassroom._id}}">
+                            <div class="actionBox">
+                                <div align="middle">
+                                    <div class="actionIcon" id="broadcastIcon"></div>
+                                    <div class="actionLabel unselectable">
+                                        Broadcast Email
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="background-color: white; border: 1px solid #e8e8e8;">
+                            <input id="studentSearch" ng-model="searchText" spellcheck="false" placeholder="{{students.length ? 'Search Student by Name or Roll no.' : 'No student enrolled'}}" type="text" ng-disabled="students.length == 0" ng-cloak>
+                            <span class="fa fa-{{searchText.length ? 'times' : 'search'}}" id="searchIcon" ng-click="clearSearch()"></span>
+                        </div>
+                    </div>
+                    <div class="row unselectable studentList" ng-repeat="student in students | filter: searchText" style="background-color: white; position: relative" ng-cloak>
+                        <div class="col-xs-12 studentEntry">
+                            <span class="rollNo">{{("00" + student.rollNo).slice(-2)}}</span>
+                            <span style="margin-left: 10px">{{student.name}}</span>
+                            <span class="fa fa-angle rightSide"></span>
+                        </div>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="modal" id="smsModal">
+                        hello
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- <select class="class-change" id="classroomList" ng-options="classroom.name for classroom in classrooms" ng-model="currentClassroom"></select> -->
+        <!-- <div class="modal" id="selectClassroom" role="dialog">
+            <div class="modal-dialog">
+            </div>
+        </div> -->
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer" style="position: fixed; width: 100%; background-color: white; bottom: 0px">
+            <div class="page-footer-inner">
+                <span target="_self" href="http://openday.in">&copy; OpenDay <%= new Date().getFullYear()%>. All Rights Reserved</span>
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+        <!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script> 
+<script src="../assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="../assets/global/plugins/bootstrap-multiselect/js/bootstrap-multiselect.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <!-- <script src="../assets/layouts/scripts/custom/plugins/knockout-3.2.0.js"></script>
+        <script src="../assets/layouts/scripts/custom/plugins/knockout.mapping-2.4.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.3/knockout.validation.min.js"></script> -->
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="../assets/global/scripts/metronic.js" type="text/javascript"></script>
+        <!-- <script src="../assets/layouts/scripts/custom/teachers.js" type="text/javascript"></script> -->
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="../assets/layouts/scripts/layout.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var classrooms = <%- classrooms %>;
+            var currentClassroomId = "<%= currentClassroomId %>";
+        </script>
+        <script src="../assets/custom/scripts/teachers/overview.js" type="text/javascript"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+    </body>
+
+</html>

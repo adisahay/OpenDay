@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>OpenDay</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#FF5A69">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+
+		<meta name="title" content="OpenDay">
+		<meta name="description" content="Move your school to the cloud."/>
+		<meta name="keywords" content="">
+		<meta content="OpenDay" name="author"/>
+
+		<link rel="apple-touch-icon" sizes="152x152" href="https://s3.ap-south-1.amazonaws.com/openday/logo.png">
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="shortcut icon" href="../../images/favicon.ico"/>
+		<style type="text/css">
+			html,
+			body {
+			    width: 100%;
+			    height: 100%;
+			    margin: 0 auto;
+			    padding: 0;
+			    background-color: #ffffff;
+			    color: #ffffff;
+			    font-family: 'Montserrat', sans-serif;
+			}
+
+			.page1, .page2 {
+				width: 100%;
+				height: 50%;
+			}
+
+			.page2 {
+				background-color: #f4f4f4;
+				overflow: hidden;
+			}
+
+			.page1 {
+				background: url('https://s3.ap-south-1.amazonaws.com/openday/logo.png') center 40% no-repeat;
+				background-size: 120px 120px;
+				background-color: #eceef3;
+				position: relative;
+			}
+
+			.content1 {
+				height: 30%;
+			    width: 100%;
+			    top: 70%;
+			    bottom: 0;
+			    margin: auto;
+			    text-align: center;
+			    font-size: 14px;
+			    position: absolute;
+			    color: #9b9b9b;
+			}
+
+			.subtitle {
+				font-weight: 700;
+				font-size:14px;
+				color:#4a4a4a;
+				text-align:center;
+				margin-top: 70px;
+			}
+
+			#subscribe-email {
+				box-shadow:inset 0px 1px 3px 0px rgba(0,0,0,0.15);
+				border-radius:5px;
+				height:45px;
+				margin-top: 20px;
+				padding-left: 50px;
+				border:1px;
+				background: url('https://s3.ap-south-1.amazonaws.com/superyum/wicons/mail.png') 15px no-repeat;
+				background-size: 24px 17px;
+				background-color:#ffffff;
+			}
+
+			.subscribe-btn {
+				border:2px solid #4a4a4a;
+				border-radius:24px;
+				width:146px;
+				height:41px;
+				font-size:14px;
+				color:#4a4a4a;
+				text-align:center;
+				background-color: transparent;
+				margin-top: 25px;
+			}
+
+			.subscribe-btn:hover, .subscribe-btn:focus {
+				background-color: #eceef3;
+			    outline: none;
+			}
+
+			.footer {
+				font-size:12px;
+				color:#9b9b9b;
+				text-align:center;
+				margin-top: 20px;
+			}
+
+			::-webkit-input-placeholder{
+				font-size:14px;
+				color:#d8d8d8;
+				font-weight: 400;
+			}
+		</style>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<%=gatc%>"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', '<%= gatc%>');
+			function subscribe() {
+				gtag('event', 'Subscribed');
+			}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+			"url": "https://openday.in"
+		}
+		</script>
+	</head>
+	<body>
+		<div class="page1">
+			<div class="content1">
+				Moving Schools forward
+			</div>
+		</div>
+		<div class="page2" align="center">
+			<div class="row">
+				<div class="col-lg-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10 subtitle">Be the first one to know when we are live</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
+					<input type="text" id="subscribe-email" class="form-control custom-form-input" placeholder="Enter your email address here" name="email" onfocus="this.placeholder = ''" onblur="this.placeholder ='Enter your email address here'" autocomplete="off">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
+					<button class="btn subscribe-btn">SUBSCRIBE</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="footer">
+					©Openday. All Rights Reserved.
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				var h = window.innerHeight;
+				$('body,html').css('height', h + 'px');
+				var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+				//$('#subscribe-email').focus();
+				$('.subscribe-btn').click(function() {
+					var email = $('#subscribe-email').val();
+					if (!emailRegex.test(email)) {
+						alert('Invalid Email Id');
+						$('#subscribe-email').focus();
+						return;
+					}
+
+					$.post("/subscribe",
+					{
+						email: email
+					}, function(data, status) {
+						if (status == 'success') {
+							subscribe();
+							$('.subscribe-btn').html('SUBSCRIBED');
+							$('.subscribe-btn').attr('style', 'background-color: black; color: white');
+						} else {
+
+						}
+					})
+				});
+			})
+		</script>
+	</body>
+</html>

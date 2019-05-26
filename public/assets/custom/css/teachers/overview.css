@@ -1,0 +1,165 @@
+html {
+    background-color: #f5f5f5;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    text-decoration: none;
+}
+
+.page-content {
+    background-color: #f5f5f5 !important;
+}
+
+.customPadding {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.actionBox {
+    position: relative;
+    padding-top: 100%;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow:2px 2px 16px 0 rgba(0,0,0,0.05);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.actionBox > div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+.actionIcon {
+    margin-top: 20%;
+    width: 45%;
+    height: 45%;
+}
+
+#attendanceIcon {
+    background: url("../../img/teachers/Attendance.png");
+    background-position: center;
+    background-size: 140%;
+}
+
+#timetableIcon {
+    background: url("../../img/teachers/Timetable.png");
+    background-position: center;
+    background-size: 140%;
+}
+
+#eventIcon {
+    background: url("../../img/teachers/AddEvent.png");
+    background-position: center;
+    background-size: 140%;
+}
+
+#broadcastIcon {
+    background: url("../../img/teachers/Broadcast.png");
+    background-position: center;
+    background-size: 140%;
+}
+
+.actionLabel {
+    margin-top: 10%;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::placeholder {
+    color: #9b9b9b !important;
+}
+
+#studentSearch {
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin-left: 15px;
+}
+
+#studentSearch:disabled {
+    background-color: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+}
+
+#searchIcon {
+    margin-top: 17px;
+    float: right;
+    font-size: 20px;
+    color: #9b9b9b;
+    margin-right: 15px;
+}
+
+.rollNo {
+    background:#34495e;
+    border-radius:3px;
+    color: white;
+    font-size: 11px;
+    padding: 6px;
+}
+
+.rightSide {
+    float: right;
+    line-height: 50px !important;
+    color: #e8e8e8;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.studentList {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.studentEntry {
+    padding-right: 25px;
+    padding-left: 25px;
+    line-height: 50px;
+}
+
+.studentEntry:after {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.separator {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 25px;
+    width: calc(100% - 50px);
+    height: 1px;
+    background-color: #f5f5f5;
+}

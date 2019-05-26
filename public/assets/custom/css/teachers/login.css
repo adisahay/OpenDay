@@ -1,0 +1,58 @@
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.message {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+.userPass {
+    line-height: 50px;
+    font-size: 20px;
+    max-width: 275px;
+    margin: 17px 0px;
+    border: 1px solid #dadada !important;
+    text-align: center;
+}
+
+#password {
+    display: none;
+}
+
+input:focus { 
+    outline: none;
+}
+
+input::placeholder {
+    font-size: 20px;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 20px;
+}
+
+input::-moz-placeholder {
+    font-size: 20px;
+}
+
+#submitPassword {
+    display: none;
+}
+
+#errorMessage {
+    display: none;
+    width: 275px;
+    margin-top: 25px;
+    color: #f26657;
+    font-weight: 700;
+}

@@ -1,0 +1,116 @@
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.genericHeader {
+    height: 64px;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #f5f5f5;
+    line-height: 64px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    text-decoration: none;
+}
+
+#backArrow {
+    width: 40px;
+    color: black;
+    padding-left: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#classPicker {
+    position: relative;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 16px;
+    line-height: 50px;
+    padding-left: 11px;
+}
+
+#lockButton {
+    position: relative;
+    right: 15px;
+    font-size: 24px;
+    vertical-align: sub;
+    opacity: 0.15
+}
+
+#arrowLine {
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: black;
+    top: 31px;
+    left: 23px;
+}
+
+::placeholder {
+    color: #a9a9a9 !important;
+}
+
+#subjectInput {
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin-left: 10px;
+    background-color: #fcfcfc;
+    font-weight: 700;
+}
+
+#bodyInput {
+    border: none;
+    padding: 15px 25px;
+    width: 100%;
+    min-height: 300px;
+    height: inherit;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+#attachButton {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #d0d0d0;
+    border: 2px solid #ffffff;
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.15);
+    width: 47px;
+    height: 47px;
+    border-radius: 100%;
+    color: white;
+    font-size: 26px;
+    padding-left: 11px;
+    padding-top: 14px;
+}
